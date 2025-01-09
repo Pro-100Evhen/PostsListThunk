@@ -1,18 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "https://jsonplaceholder.typicode.com/posts?_limit=12";
+const API_URL = "https://jsonplaceholder.typicode.com/";
 
-export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-   const response = await axios.get(API_URL);
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (type) => {
+   const response = await axios.get(`${API_URL}${type}?_limit=10`);
    return response.data;
 });
 
 const initialState = {
-   posts: [
-      { id: -1, title: "Post 1", body: "This is post 1" },
-      { id: 0, title: "Post 2", body: "This is post 2" },
-   ],
+   dataType: "users", // posts || users || comments
+   posts: [],
    status: "idle", // idle | loading | succeeded | failed
    error: null,
 };
@@ -20,7 +18,16 @@ const initialState = {
 export const postsSlice = createSlice({
    name: "posts",
    initialState: initialState,
-   reducers: {},
+   reducers: {
+      changeDataType(state, action) {
+         state.dataType = action.payload;
+      },
+      cleareDataType(state) {
+         // state.dataType = "";
+         state.posts = [];
+         state.status = "idle";
+      },
+   },
    extraReducers(builder) {
       builder
          .addCase(fetchPosts.pending, (state) => {
@@ -29,7 +36,6 @@ export const postsSlice = createSlice({
          .addCase(fetchPosts.fulfilled, (state, action) => {
             state.status = "succeeded";
             state.posts = [...state.posts, ...action.payload];
-            console.log(action.payload);
          })
          .addCase(fetchPosts.rejected, (state, action) => {
             state.status = "failed";
@@ -38,6 +44,7 @@ export const postsSlice = createSlice({
    },
 });
 
+export const { changeDataType, cleareDataType } = postsSlice.actions;
 export const postsSelector = (state) => state.posts.posts;
 
 export const postsReducer = postsSlice.reducer;
