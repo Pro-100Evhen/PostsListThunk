@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+PostsListThunk is a project created to practice using the Redux Toolkit and its createAsyncThunk function to implement asynchronous queries in a React application. This project implemented the output of three types of data (users, posts, and comments) from the JSONPlaceholder test API, which allows you to understand how to work with asynchronous operations in Redux and React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project uses React, which is the main library for building the user interface. Redux Toolkit is used for state management, which greatly simplifies the process of working with global state and asynchronous requests thanks to functions such as createSlice and createAsyncThunk. These tools help in separating the logic of working with data from components, keeping the code clean and maintainable. Instead of the standard methods for asynchronous operations in Redux, createAsyncThunk allows you to describe asynchronous requests more declaratively, which reduces code complexity.
 
-## Available Scripts
+To interact with the API, we used Axios, a popular library for making HTTP requests that conveniently handles responses and errors. In addition, the project also includes the use of React-Redux to integrate Redux with React components, which allows for efficient state transfer and updating between components. The application is deployed using gh-pages, which allows you to quickly publish a React application to GitHub Pages.
 
-In the project directory, you can run:
+The project helped me learn important concepts of managing asynchronous requests in Redux, particularly using createAsyncThunk to load data from an external API. One of the main tasks was to correctly configure the handling of different stages of an asynchronous request - waiting, success, and errors - and to correctly update the state in Redux depending on the result.
 
-### `npm start`
+The project also provides experience in setting up a connection between different React components through the global state of Redux, where it is important to use the useSelector and useDispatch hooks correctly to access and update the state. An important aspect was to dynamically change the data output depending on the selected type (posts, users, or comments) and provide asynchronous access to this data via Redux.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Additionally, the project provided valuable practice in using Tailwind CSS for styling the user interface. Tailwind's utility-first approach allowed me to quickly and efficiently style components without writing custom CSS, helping to keep the styling consistent and maintainable throughout the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Thus, this project became great practice for working with Redux in real-world conditions, including mastering asynchronous request management, error handling, configuring the frontend with global state via Redux, and applying utility-first styling with Tailwind CSS.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App link: [https://pro-100evhen.github.io/PostsListThunk/](https://pro-100evhen.github.io/PostsListThunk/)
