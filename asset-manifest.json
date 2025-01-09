@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PostsListThunk/static/css/main.4860a2cc.css",
+    "main.js": "/PostsListThunk/static/js/main.5ca78488.js",
+    "index.html": "/PostsListThunk/index.html",
+    "main.4860a2cc.css.map": "/PostsListThunk/static/css/main.4860a2cc.css.map",
+    "main.5ca78488.js.map": "/PostsListThunk/static/js/main.5ca78488.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4860a2cc.css",
+    "static/js/main.5ca78488.js"
+  ]
+}
